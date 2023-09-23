@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= locals.title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <script src="https://kit.fontawesome.com/f275b38304.js" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <h1 id="page-heading">
+      <i class="fas fa-address-book"></i>
+      My Contacts list
+    </h1>
+    <div>
+      <ul>
+        <% for(let i of locals.contact_list){%>
+        <li class="contact">
+        <div class ="details">
+        <p><%=i.name %></p>   <!-- name and phone are the database fields-->
+        <p><%=i.phone%></p>
+        </div>
+        <div class="delete-button">
+<!-- <a href="/delete-contact/<%=i.phone%>"> -->
+  <!-- <a href="delete-contact-query/?pho=<%=i.phone%>&n=<%=i.name%>"> -->
+    <a href="/delete-contact-query/?oid=<%=i._id%>">
+        <i class="fas fa-window-close"></i>
+</a>
+ </div>
+          </li>        
+        <%}%>
+      </ul>
+      </div>
+
+    <form action="/create-contact" method="post">    <!-- we are sending some data to the server therefore post -->
+<input type="text" name ="names" placeholder="enter name">
+<input type= "number" name="phno" placeholder="enter mob no">
+<button type="submit">Add contact</button>
+    </form>
+
+<script type="text/javascript" src="/js/home.js"></script>
+
+</body>
+</html>

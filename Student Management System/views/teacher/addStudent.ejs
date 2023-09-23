@@ -1,0 +1,45 @@
+<header>
+  <div class="container-fluid bg-info text-center" style="height: 50px">
+
+    <div class="row">
+      <div class="col-sm-10">
+        <h4 style="padding-top: 8px">Student Management system</h4>
+      </div>
+      <div class="col-sm-2">
+        <a href="/"><button style="margin-top: 3px" type="button" class="btn btn-primary">Logout</button></a>
+      </div>
+    </div>
+    <div>
+    </div>
+  </div>
+</header>
+<br>
+<div class="container">
+  <a href="/teacher/viewall" class="btn btn-info" style="margin-top:5px;">Back</a>
+  <br>
+  <br>
+  <center>
+    <h4>Add Student-Result</h4>
+  </center>
+  <form method="POST" class="addStu" autocomplete="off">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+      <input type="number" name="roll" required class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name : </label>
+      <input type="text" name="name" required class="form-control" id="exampleInputEmail1">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
+      <input type="date" name="dob" class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Score : </label>
+      <input type="number" name="score" required class="form-control" id="exampleInputEmail1">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/teacher/viewall" class="btn btn-primary">View All</a>
+  </form>
+</div>
